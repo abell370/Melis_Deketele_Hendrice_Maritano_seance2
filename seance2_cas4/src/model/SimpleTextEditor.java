@@ -1,6 +1,6 @@
 package model;
 public class SimpleTextEditor extends Application{
-    public SimpleTextEditor(Document document) {
-        super(document);
+    public SimpleTextEditor(IDocumentFactory factory) {
+        super(factory);
     } 
 }

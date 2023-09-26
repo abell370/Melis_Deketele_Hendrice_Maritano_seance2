@@ -1,13 +1,15 @@
-import model.Application;
-import model.ApplicationFactory;
-import model.IApplicationFactory;
+import model.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        IApplicationFactory appFactory = new ApplicationFactory();
-        Application pdfApp = appFactory.createPdfApp();
-        Application simpleTxtApp = appFactory.createSimpleTextApp();
-        pdfApp.read();
-        simpleTxtApp.read();
+        IDocumentFactory factory = new DocumentFactory();
+
+        Application pdf = new PdfEditor(factory);
+        pdf.createPdf();
+        pdf.read();
+
+        Application ascii = new SimpleTextEditor(factory);
+        ascii.createAscii();
+        ascii.read();
     }
 }
