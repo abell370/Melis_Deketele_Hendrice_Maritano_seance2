@@ -1,6 +1,11 @@
 package model;
 public class SimpleTextEditor extends Application{
-    public SimpleTextEditor(IDocumentFactory factory) {
-        super(factory);
-    } 
+    public SimpleTextEditor() {
+        super();
+    }
+
+    @Override
+    public Document createDocument() {
+        return new AsciiDocument();
+    }
 }
